@@ -27,20 +27,24 @@ const Game = () => {
     // console.log("clicked square" + i ,values);
   };
 
-  let renderSquare = i => <Square value={state.values[i]} onClick={() => clickedSquare(i)} />;
+  let renderSquare = i => <Square key  ={i} value={state.values[i]} onClick={() => clickedSquare(i)} />;
 
   return (
     <div>
       <div>Next Player is: {state.isX ? "X" : "O"}</div>
-      {[...Array(n)].map((row, i) => {
-        return (
-          <div key={i} className="board-row">
-            {[...Array(n)].map((value, j) => {
-              return <span key={(i + 100) * n + j}>{renderSquare(i * n + j)}</span>;
-            })}
-          </div>
-        );
-      })}
+      <table className="gameContainer">
+        <tbody>
+        {[...Array(n)].map((row, i) => {
+          return (
+            <tr key={i} className="board-row">
+              {[...Array(n)].map((value, j) => {
+                return renderSquare(i * n + j)
+              })}
+            </tr>
+          );
+        })}
+        </tbody>
+      </table>
     </div>
   );
 };
