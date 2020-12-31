@@ -14,8 +14,10 @@
 .scoreBoardPlayer{
     position: absolute;
     left: 20%;
+    top: 0;
 }
 .scoreBoardCount{
     position: absolute;
     right: 20%;
+    top: 0;
 }
