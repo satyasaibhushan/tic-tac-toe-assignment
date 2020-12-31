@@ -107,7 +107,7 @@ const Board = props => {
       </table>
 
       <div className="restartGameContainer" onClick={() => restartGame()}>
-        <RefreshIcon className="refreshIcon" />
+        <RefreshIcon className="refreshIcon" data-tooltip="refresh board"  />
       </div>
     </div>
   );

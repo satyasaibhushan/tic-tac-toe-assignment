@@ -15,7 +15,7 @@ const Modal = props => {
 
   return (
     <div className={"modal"} onClick={closeModal} style={{display: props.isModalOpen ? "flex" : "none"}}>
-      <div className={!props.isModalOpen?"modal-content":"modal-content open"} style={{height:props.winner?"33%":"23%"}}onClick={e => e.stopPropagation()}>
+      <div className={!props.isModalOpen?"modal-content":"modal-content open"} style={{height:props.winner?"34%":"23%"}}onClick={e => e.stopPropagation()}>
         <span className="close" onClick={closeModal}>
           &times;
         </span>

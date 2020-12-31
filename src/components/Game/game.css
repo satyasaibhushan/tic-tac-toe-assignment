@@ -1,8 +1,53 @@
-.Game{
+.Game {
   display: block;
 }
 
-.ScroeBoardsContainer{
+.ScroeBoardsContainer {
   display: flex;
   justify-content: center;
+  user-select: none;
+}
+.scoresResetDiv {
+  position: absolute;
+  /* opacity: 0.5; */
+  left: 80%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.scoresResetDiv svg{
+  fill: rgb(192, 192, 192);
+}
+.scoresResetDiv:active svg{
+  fill:white ;
+}
+
+[data-tooltip]:before {
+  /* needed - do not touch */
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+
+  /* customizable */
+  transition: all 0.05s ease;
+  padding: 10px;
+  color: rgb(173, 171, 171);
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px silver;
+  width: max-content;
+}
+
+[data-tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+
+  /* customizable */
+  background: rgb(39, 39, 39);
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+  pointer-events: none;
 }

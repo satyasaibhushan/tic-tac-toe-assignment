@@ -2,6 +2,9 @@ body{
     background-color: black;
     color: whitesmoke;
 }
+*{
+    box-sizing: border-box;
+}
 
 
 
