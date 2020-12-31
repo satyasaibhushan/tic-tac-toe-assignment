@@ -3,6 +3,7 @@ import Square from "../Square/Square";
 import checkWinner from "../../checkWinner";
 import Modal from "../Modal/Modal";
 import "./game.css";
+import {ReactComponent as RefreshIcon} from "../../assets/refreshIcon.svg"
 
 let n = 3;
 let moves = 0;
@@ -93,7 +94,7 @@ const Game = () => {
       </table>
 
       <div className="restartGameContainer" onClick={() => restartGame()}>
-        <button>Restart Game</button>
+        <RefreshIcon className="refreshIcon"/>
       </div>
     </div>
   );
