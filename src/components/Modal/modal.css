@@ -1,36 +1,84 @@
 .modal {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
-    z-index: 1; /* Overlay effect: positioned over other containers */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    position: fixed; /* Fix position on the top-left corner*/
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 1;
+    width: 100%; 
+    height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-    overflow: auto; /* Enable scroll if needed */
-    padding-top: 80px; /* Location of the content container */
+    overflow: auto; 
+    padding-top: 80px; 
+    color: black;
 }
-/* Modal content */
 .modal-content {
-    background-color: white;
-    width: 70%; /* Width in proportion to its parent container*/
-    max-width: 640px; /* Max width where it stops expanding */
-    height: 70%; /* Height in proportion to its parent container */
-    margin: auto; /* Auto margin according to the element width */
+    background-color: #e4e4e4;
+    width: 35%;
+    max-width: 640px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30%;
     padding: 10px;
     border: 1px solid black;
-    border-radius: 20px; /* Optional. Rounds container corners */
+    border-radius: 20px;
+    /* margin: auto; */
 }
-/* Close button */
-.close {
+
+.modal .close {
    color: #aaaaaa;
-   float: right; /* Positioned to the right of the parent container whichever size it is */
+   float: right; 
    font-size: 25px;
    font-weight: bold;
 }
-.close:hover, 
-.close:focus {
+.modal .close:hover, 
+.modal .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+.modal p{
+    position: relative;
+    text-align: center;
+    font-size: 27px;
+    top: 6%;
+}
+.modal .winner{
+    text-align: center;
+    font-size: 64px;
+    margin: 0;
+    position: relative;
+    top: 2%;
+}
+.restartGameContainerModal{
+    position: absolute;
+	top: 85%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.restartGameContainerModal button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal circle {
+	-webkit-animation-duration: 0s;
+	animation-duration: 0s;
+	stroke: #0a0908; 
+}
+.modal path {
+	-webkit-animation-duration: 0s;
+	animation-duration: 0s;
+	stroke: #0c0505; 
+}
+
+.modal .x path:nth-of-type(2) {
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
 }
