@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { X, O } from "../../assets/svgs";
+import "./square.css"
 
 const Square = props => {
   const inputEl = useRef(null);
