@@ -1,0 +1,49 @@
+  td {
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    height: 175px;
+    width: 175px;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    font-size: 70px;
+    cursor: pointer;
+  }
+  
+  .boardContainer {
+    border-collapse: collapse;
+    margin: auto;
+    margin: 6rem 0 2rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%);*/
+  }
+  
+  table tr:last-child td {
+    border-bottom: 0px;
+  }
+  table tr td:last-child {
+    border-right: 0px;
+  }
+  .restartGameContainer {
+    position: absolute;
+    top: 14%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .refreshIcon {
+    width: 40px;
+  }
+  
