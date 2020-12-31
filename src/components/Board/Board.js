@@ -3,7 +3,7 @@ import Square from "../Square/Square";
 import checkWinner from "../../checkWinner";
 import Modal from "../Modal/Modal";
 import "./board.css";
-import {ReactComponent as RefreshIcon} from "../../assets/refreshIcon.svg"
+import { ReactComponent as RefreshIcon } from "../../assets/refreshIcon.svg";
 
 let n = 3;
 let moves = 0;
@@ -36,7 +36,8 @@ let reducer = (state, action) => {
   }
 };
 
-const Board = (props) => {
+let elementsWon = [];
+const Board = props => {
   // console.log("rerendering");
   const [state, dispatch] = useReducer(reducer, initialState(true));
 
@@ -48,14 +49,21 @@ const Board = (props) => {
     }
     // console.log("clicked square" + i ,values);
   };
+  // let highlight = elementsWon =>{
+  //   elementsWon.forEach(ele=>{
+
+  //   })
+  // }
 
   let validate = i => {
-    let isWon = checkWinner(state.values, n, i, !state.isX);
+    let isWon;
+    [isWon, elementsWon] = checkWinner(state.values, n, i, !state.isX);
     if (isWon) {
+      // highlight(elementsWon)
       props.wonGame(!state.isX ? "X" : "O");
       setTimeout(() => {
         dispatch({ type: "won", winner: !state.isX ? "X" : "O" });
-      }, 500);
+      }, 2000);
     } else if (moves == n * n) {
       setTimeout(() => {
         dispatch({ type: "draw" });
@@ -63,9 +71,18 @@ const Board = (props) => {
     }
   };
 
-  let renderSquare = i => (
-    <Square key={i} index={i} value={state.values[i]} onClick={() => clickedSquare(i)} validate={validate} />
+  let renderSquare = i => {
+    return (
+    <Square
+      key={i}
+      index={i}
+      value={state.values[i]}
+      onClick={() => clickedSquare(i)}
+      validate={validate}
+      highlight={elementsWon.indexOf(i) != -1}
+    />
   );
+  }
   let restartGame = winner => {
     dispatch({ type: "restart game" });
     props.changePlayer(!state.isX ? "X" : "O");
@@ -95,7 +112,7 @@ const Board = (props) => {
       </table>
 
       <div className="restartGameContainer" onClick={() => restartGame()}>
-        <RefreshIcon className="refreshIcon"/>
+        <RefreshIcon className="refreshIcon" />
       </div>
     </div>
   );

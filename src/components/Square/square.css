@@ -1,35 +1,58 @@
 circle,
 path {
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-	-webkit-animation-name: draw;
-	animation-name: draw;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: draw;
+  animation-name: draw;
 }
 circle {
-	-webkit-animation-duration: 0.5s;
-	animation-duration: 0.5s;
-	stroke: #ff5e13; /*pink: #f62459*/
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  stroke: #ff5e13; /*pink: #f62459*/
 }
 path {
-	-webkit-animation-duration: 0.25s;
-	animation-duration: 0.25s;
-	stroke: #49a1ea; /*mint:; #36dbd7*/
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  stroke: #49a1ea; /*mint:; #36dbd7*/
 }
 @-webkit-keyframes draw {
-	to {
-		stroke-dashoffset: 0;
-	}
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 @keyframes draw {
-	to {
-		stroke-dashoffset: 0;
-	}
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 .o {
-	-webkit-transform: rotateY(180deg) rotate(-45deg);
-	transform: rotateY(180deg) rotate(-45deg);
+  -webkit-transform: rotateY(180deg) rotate(-45deg);
+  transform: rotateY(180deg) rotate(-45deg);
 }
 .x path:nth-of-type(2) {
-	-webkit-animation-delay: 0.25s;
-	animation-delay: 0.25s;
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+.animation {
+  -webkit-animation-name: highlighted;
+  animation-name: highlighted;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+@keyframes highlighted {
+  0% {
+	opacity: 1;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
 }

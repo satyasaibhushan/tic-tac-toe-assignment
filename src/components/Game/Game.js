@@ -6,13 +6,15 @@ import "./game.css";
 const Game = () => {
   const [wins, setWins] = useState({ X: 0, O: 0 });
   const [currentPlayer, setCurrentPlayer] = useState("X");
-  const playerRef = useRef("X");
+
 
   return (
     <div className="Game">
       <Board
         wonGame={winner => {
-          winner == "X" ? setWins({ ...wins, X: ++wins.X }) : setWins({ ...wins, O: ++wins.O });
+          setTimeout(() => {
+            winner == "X" ? setWins({ ...wins, X: ++wins.X }) : setWins({ ...wins, O: ++wins.O });
+          }, 1000);
         }}
         changePlayer={player => setCurrentPlayer(player)}
       />
