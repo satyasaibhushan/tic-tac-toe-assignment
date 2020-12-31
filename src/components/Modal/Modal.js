@@ -4,9 +4,6 @@ import { X, O } from "../../assets/svgs";
 
 const Modal = props => {
   const winner = useRef(null);
-  const divStyle = {
-    display: props.isModalOpen ? "block" : "none",
-  };
   function closeModal(e) {
     e?e.stopPropagation():"";
     props.closeModal();
@@ -17,8 +14,8 @@ const Modal = props => {
   }, [props.winner]);
 
   return (
-    <div className="modal" onClick={closeModal} style={divStyle}>
-      <div className="modal-content" style={{height:props.winner?"30%":"23%"}}onClick={e => e.stopPropagation()}>
+    <div className={"modal"} onClick={closeModal} style={{display: props.isModalOpen ? "flex" : "none"}}>
+      <div className={!props.isModalOpen?"modal-content":"modal-content open"} style={{height:props.winner?"33%":"23%"}}onClick={e => e.stopPropagation()}>
         <span className="close" onClick={closeModal}>
           &times;
         </span>

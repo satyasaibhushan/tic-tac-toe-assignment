@@ -14,7 +14,7 @@ const Game = () => {
         wonGame={winner => {
           setTimeout(() => {
             winner == "X" ? setWins({ ...wins, X: ++wins.X }) : setWins({ ...wins, O: ++wins.O });
-          }, 1000);
+          }, 500);
         }}
         changePlayer={player => setCurrentPlayer(player)}
       />

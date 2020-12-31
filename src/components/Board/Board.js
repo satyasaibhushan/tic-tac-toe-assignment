@@ -49,21 +49,16 @@ const Board = props => {
     }
     // console.log("clicked square" + i ,values);
   };
-  // let highlight = elementsWon =>{
-  //   elementsWon.forEach(ele=>{
-
-  //   })
-  // }
 
   let validate = i => {
     let isWon;
     [isWon, elementsWon] = checkWinner(state.values, n, i, !state.isX);
     if (isWon) {
-      // highlight(elementsWon)
+      console.log(elementsWon)
       props.wonGame(!state.isX ? "X" : "O");
       setTimeout(() => {
         dispatch({ type: "won", winner: !state.isX ? "X" : "O" });
-      }, 2000);
+      }, 1500);
     } else if (moves == n * n) {
       setTimeout(() => {
         dispatch({ type: "draw" });
@@ -85,7 +80,7 @@ const Board = props => {
   }
   let restartGame = winner => {
     dispatch({ type: "restart game" });
-    props.changePlayer(!state.isX ? "X" : "O");
+    props.changePlayer("X");
   };
   return (
     <div>

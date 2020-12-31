@@ -1,84 +1,105 @@
+.modal-close {
+  opacity: 0;
+  z-index: -100;
+  cursor: none;
+}
 .modal {
-    background-color: rgba(0,0,0,0.4); 
-    z-index: 1;
-    width: 100%; 
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: auto; 
-    padding-top: 80px; 
-    color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content.open {
+  animation: slideOut 0.5s ease-in-out 1;
+}
+@keyframes slideOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .modal-content {
-    background-color: #e4e4e4;
-    width: 35%;
-    max-width: 640px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 30%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-    /* margin: auto; */
+  background-color: rgb(0 0 0);
+  width: 35%;
+  max-width: 640px;
+  position: relative;
+  height: 33%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px 5px rgb(200, 200, 200);
+  /* margin: auto;*/
 }
 
 .modal .close {
-   color: #aaaaaa;
-   float: right; 
-   font-size: 25px;
-   font-weight: bold;
+  color: #aaaaaa;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
 }
-.modal .close:hover, 
+.modal .close:hover,
 .modal .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
 }
-.modal p{
-    position: relative;
-    text-align: center;
-    font-size: 27px;
-    top: 6%;
+.modal p {
+  /* position: relative; */
+  text-align: center;
+  font-size: 27px;
+  /* top: 3%; */
+  margin: 30px 0 20px 0;
 }
-.modal .winner{
-    text-align: center;
-    font-size: 64px;
-    margin: 0;
-    position: relative;
-    top: 2%;
+.modal .winner {
+  text-align: center;
+  font-size: 64px;
+  margin: 0;
+  position: relative;
+  top: -4%;
 }
-.restartGameContainerModal{
-    position: absolute;
-	top: 85%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.restartGameContainerModal {
+  display: flex;
+  justify-content: center;
 }
-.restartGameContainerModal button{
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
+.restartGameContainerModal button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 .modal circle {
-	-webkit-animation-duration: 0s;
-	animation-duration: 0s;
-	stroke: #0a0908; 
+  -webkit-animation-duration: 0s;
+  animation-duration: 0s;
+  stroke: #ff5e13;
 }
 .modal path {
-	-webkit-animation-duration: 0s;
-	animation-duration: 0s;
-	stroke: #0c0505; 
+  -webkit-animation-duration: 0s;
+  animation-duration: 0s;
+  stroke: #49a1ea;
 }
 
 .modal .x path:nth-of-type(2) {
-	-webkit-animation-delay: 0s;
-	animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
 }
