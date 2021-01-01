@@ -27,7 +27,7 @@ const Game = () => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [cookie, updateCookie] = useCookie("noOfWins", '{ "X": 0, "O": 0 }');
   const [state, dispatch] = useReducer(reducer, JSON.parse(cookie));
-  console.log(cookie, state, typeof(state) );
+  // console.log(cookie, state, typeof(state) );
 
   return (
     <div className="Game">
